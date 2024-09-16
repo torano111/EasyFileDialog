@@ -1,7 +1,7 @@
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 #include "FilePluginProjectCharacter.h"
-#include "HeadMountedDisplayFunctionLibrary.h"
+//#include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -79,7 +79,7 @@ void AFilePluginProjectCharacter::SetupPlayerInputComponent(class UInputComponen
 
 void AFilePluginProjectCharacter::OnResetVR()
 {
-	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
+	//UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
 
 void AFilePluginProjectCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
