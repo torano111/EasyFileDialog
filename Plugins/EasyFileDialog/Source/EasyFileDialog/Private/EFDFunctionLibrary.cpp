@@ -16,8 +16,8 @@ bool UEFDFunctionLibrary::SaveFileDialog(const FString& DialogTitle, const FStri
 {
     // Saving the file type and file type description to append and Removing . if user provides any
     FString TempFileType = FileType.Replace(TEXT("."), TEXT(""));
-  
-    FString TempFileTypeDescription = FileTypeDescription;  
+
+    FString TempFileTypeDescription = FileTypeDescription;
 
     // Setting description if user did not provide any
     if (TempFileTypeDescription.IsEmpty())
@@ -30,6 +30,11 @@ bool UEFDFunctionLibrary::SaveFileDialog(const FString& DialogTitle, const FStri
 
     // Calling the core class function for save file dialog
     return EFDCore::SaveFileDialogCore(DialogTitle, DefaultPath, DefaultFile, FinalFileType, Flags, OutFilenames);
+}
+
+bool UEFDFunctionLibrary::SaveFileDialogRaw(const FString& DialogTitle, const FString& DefaultPath, const FString& DefaultFile, const FString& FileTypes, EEasyFileDialogFlags Flags, TArray<FString>& OutFilenames)
+{
+    return EFDCore::SaveFileDialogCore(DialogTitle, DefaultPath, DefaultFile, FileTypes, Flags, OutFilenames);
 }
 
 
